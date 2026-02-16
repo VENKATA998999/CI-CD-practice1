@@ -1,0 +1,16 @@
+name: Basic CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run sum script
+        run: bash scripts/sum.sh
+      - name: Run test script
+        run: bash scripts/sum_test.sh
