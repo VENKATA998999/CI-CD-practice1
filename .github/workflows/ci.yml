@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: Basic CI
+=======
+name: Node.js CI
+>>>>>>> d48e18ca58bc05387789bdc254d31713f94a6b14
 
 on:
   push:
@@ -9,8 +13,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+<<<<<<< HEAD
       - uses: actions/checkout@v3
       - name: Run sum script
         run: bash scripts/sum.sh
       - name: Run test script
         run: bash scripts/sum_test.sh
+=======
+    - uses: actions/checkout@v3
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    - name: Install dependencies
+      run: npm install
+    - name: Run tests
+      run: npm test
+>>>>>>> d48e18ca58bc05387789bdc254d31713f94a6b14
